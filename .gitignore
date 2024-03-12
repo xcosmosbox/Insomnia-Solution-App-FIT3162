@@ -1,0 +1,15 @@
+# Xcode
+xcuserdata/
+project.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+DerivedData/
+
+# dev dependency
+Pods/
+Carthage/Build
+.build/
+
+# other
+.DS_Store
+*.swp
+*.swo

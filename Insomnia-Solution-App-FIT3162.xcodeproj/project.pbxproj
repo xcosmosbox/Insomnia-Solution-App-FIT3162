@@ -16,6 +16,7 @@
 		6A4C8B592BA5C5B200549481 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C8B582BA5C5B200549481 /* HomePage.swift */; };
 		6A4C8B5C2BA5C83B00549481 /* WhiteNoise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C8B5B2BA5C83B00549481 /* WhiteNoise.swift */; };
 		6A4C8B5F2BA5C8CB00549481 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C8B5E2BA5C8CB00549481 /* MulticastDelegate.swift */; };
+		CC8D37482BA7F7C300B7CF62 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC8D37472BA7F7C300B7CF62 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		6A4C8B582BA5C5B200549481 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		6A4C8B5B2BA5C83B00549481 /* WhiteNoise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteNoise.swift; sourceTree = "<group>"; };
 		6A4C8B5E2BA5C8CB00549481 /* MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
+		CC8D37472BA7F7C300B7CF62 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		27920D1E2BA004BE00357D31 /* Insomnia-Solution-App-FIT3162 */ = {
 			isa = PBXGroup;
 			children = (
+				CC8D37472BA7F7C300B7CF62 /* GoogleService-Info.plist */,
 				6A4C8B5D2BA5C8B900549481 /* Database */,
 				6A4C8B5A2BA5C80B00549481 /* Model */,
 				27920D1F2BA004BE00357D31 /* AppDelegate.swift */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27920D2C2BA004BF00357D31 /* LaunchScreen.storyboard in Resources */,
+				CC8D37482BA7F7C300B7CF62 /* GoogleService-Info.plist in Resources */,
 				27920D292BA004BF00357D31 /* Assets.xcassets in Resources */,
 				27920D272BA004BE00357D31 /* Main.storyboard in Resources */,
 			);

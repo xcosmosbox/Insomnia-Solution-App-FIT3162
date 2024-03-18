@@ -17,6 +17,10 @@
 		6A4C8B5C2BA5C83B00549481 /* WhiteNoise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C8B5B2BA5C83B00549481 /* WhiteNoise.swift */; };
 		6A4C8B5F2BA5C8CB00549481 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C8B5E2BA5C8CB00549481 /* MulticastDelegate.swift */; };
 		CC8D37482BA7F7C300B7CF62 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC8D37472BA7F7C300B7CF62 /* GoogleService-Info.plist */; };
+		CC8D374B2BA7FB4F00B7CF62 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CC8D374A2BA7FB4F00B7CF62 /* FirebaseAuth */; };
+		CC8D374D2BA7FB4F00B7CF62 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CC8D374C2BA7FB4F00B7CF62 /* FirebaseFirestore */; };
+		CC8D374F2BA7FB4F00B7CF62 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CC8D374E2BA7FB4F00B7CF62 /* FirebaseFirestoreSwift */; };
+		CC8D37512BA7FB4F00B7CF62 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = CC8D37502BA7FB4F00B7CF62 /* FirebaseStorage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +43,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC8D374B2BA7FB4F00B7CF62 /* FirebaseAuth in Frameworks */,
+				CC8D37512BA7FB4F00B7CF62 /* FirebaseStorage in Frameworks */,
+				CC8D374D2BA7FB4F00B7CF62 /* FirebaseFirestore in Frameworks */,
+				CC8D374F2BA7FB4F00B7CF62 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +119,12 @@
 			dependencies = (
 			);
 			name = "Insomnia-Solution-App-FIT3162";
+			packageProductDependencies = (
+				CC8D374A2BA7FB4F00B7CF62 /* FirebaseAuth */,
+				CC8D374C2BA7FB4F00B7CF62 /* FirebaseFirestore */,
+				CC8D374E2BA7FB4F00B7CF62 /* FirebaseFirestoreSwift */,
+				CC8D37502BA7FB4F00B7CF62 /* FirebaseStorage */,
+			);
 			productName = "Insomnia-Solution-App-FIT3162";
 			productReference = 27920D1C2BA004BE00357D31 /* Insomnia-Solution-App-FIT3162.app */;
 			productType = "com.apple.product-type.application";
@@ -139,6 +153,9 @@
 				Base,
 			);
 			mainGroup = 27920D132BA004BE00357D31;
+			packageReferences = (
+				CC8D37492BA7FB4F00B7CF62 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 27920D1D2BA004BE00357D31 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -392,6 +409,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CC8D37492BA7FB4F00B7CF62 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.22.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CC8D374A2BA7FB4F00B7CF62 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC8D37492BA7FB4F00B7CF62 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		CC8D374C2BA7FB4F00B7CF62 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC8D37492BA7FB4F00B7CF62 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		CC8D374E2BA7FB4F00B7CF62 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC8D37492BA7FB4F00B7CF62 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		CC8D37502BA7FB4F00B7CF62 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC8D37492BA7FB4F00B7CF62 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 27920D142BA004BE00357D31 /* Project object */;
 }

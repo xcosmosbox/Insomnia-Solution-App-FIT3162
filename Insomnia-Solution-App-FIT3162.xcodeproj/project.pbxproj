@@ -319,7 +319,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7CSJ759H94;
+				DEVELOPMENT_TEAM = 5LYSS5FAJ8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Insomnia-Solution-App-FIT3162/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -333,7 +333,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.fit3162.cs12.Insomnia-Solution-App-FIT3162";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fit3162.cs12.Insomnia-Solution-App-FIT3162-3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -348,7 +348,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7CSJ759H94;
+				DEVELOPMENT_TEAM = 5LYSS5FAJ8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Insomnia-Solution-App-FIT3162/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -362,7 +362,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.fit3162.cs12.Insomnia-Solution-App-FIT3162";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fit3162.cs12.Insomnia-Solution-App-FIT3162-3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

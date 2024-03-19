@@ -7,4 +7,6 @@
 
 import Foundation
 
-
+class WhiteNoise: NSObject, Codable 
+    var name: String?
+}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		275E92882BA93D6F003E5730 /* MediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275E92872BA93D6F003E5730 /* MediaCollectionViewCell.swift */; };
 		27920D202BA004BE00357D31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27920D1F2BA004BE00357D31 /* AppDelegate.swift */; };
 		27920D222BA004BE00357D31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27920D212BA004BE00357D31 /* SceneDelegate.swift */; };
 		27920D242BA004BE00357D31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27920D232BA004BE00357D31 /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		275E92872BA93D6F003E5730 /* MediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCollectionViewCell.swift; sourceTree = "<group>"; };
 		27920D1C2BA004BE00357D31 /* Insomnia-Solution-App-FIT3162.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Insomnia-Solution-App-FIT3162.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27920D1F2BA004BE00357D31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27920D212BA004BE00357D31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				6A4C8B5B2BA5C83B00549481 /* WhiteNoise.swift */,
+				275E92872BA93D6F003E5730 /* MediaCollectionViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

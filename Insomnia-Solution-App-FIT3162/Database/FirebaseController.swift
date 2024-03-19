@@ -263,6 +263,94 @@ class FirebaseController: NSObject, DatabaseProtocol {
     
     
     
+    var listeners = MulticastDelegate<DatabaseListener>()
+    
+    // reference to firebase
+    var authController: Auth
+    var database: Firestore
+    var fireStorage: Storage
+    var deafultMediaRef: CollectionReference?
+    var userRef: CollectionReference?
+    var currentUser: FirebaseAuth.User?
+    
+    // user login state
+    var userLoginState: Bool
+    
+    // default white noise list
+    var defaultWhiteNoise: [WhiteNoise]
+    
+    
+    override init() {
+        FirebaseApp.configure()
+        authController = Auth.auth()
+        database = Firestore.firestore()
+        fireStorage = Storage.storage()
+        userLoginState = false
+        super.init()
+    }
+    
+    
+    func addListener(listener: DatabaseListener) {
+        listeners.addDelegate(listener)
+        
+        if listener.listenerType == .meditation || listener.listenerType == .all{
+            listener.onMeditationChange(change: .update)
+        }
+        
+        if listener.listenerType == .explore || listener.listenerType == .all{
+            listener.onExploreChange(change: .update)
+        }
+        
+        if listener.listenerType == .auth || listener.listenerType == .all{
+            listener.onAuthChange(change: .update, userIsLoggedIn: userLoginState, error: "")
+        }
+        
+        if listener.listenerType == .person || listener.listenerType == .all{
+            listener.onPersonChange(change: .update)
+        }
+        
+    }
+    
+    func removeListener(listener: DatabaseListener) {
+        listeners.removeDelegate(listener)
+    }
+    
+    
+    
+    func addWhiteNoise(name: String) -> WhiteNoise {
+        let media = WhiteNoise()
+        
+        // add one white noise from firestore
+        // only for dev level, will be modified in the future
+        
+    }
+    
+    func deleteWhiteNoise(tag: WhiteNoise) {
+        <#code#>
+    }
+    
+    var currentMediaCell: [MediaCollectionViewCell]
+    
+    func addMediaCell(media: MediaCollectionViewCell) -> MediaCollectionViewCell {
+        <#code#>
+    }
+    
+    func deleteMediaCell(media: MediaCollectionViewCell) {
+        <#code#>
+    }
+    
+    func login(email: String, password: String) {
+        <#code#>
+    }
+    
+    func signup(newEmail: String, newPassword: String) {
+        <#code#>
+    }
+    
+    func getCurrentUserUID() -> String {
+        <#code#>
+    }
+
 }
 
 

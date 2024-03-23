@@ -7,9 +7,11 @@
 
 import Foundation
 import Combine
+import FirebaseCore
 import Firebase
 import FirebaseAuth
-import FirebaseFirestoreSwift
+//import FirebaseFirestoreSwift
+import FirebaseFirestore
 import FirebaseStorage
 
 
@@ -22,9 +24,9 @@ class FirebaseController: NSObject, DatabaseProtocol {
     private var authController: Auth
     private var database: Firestore
     private var fireStorage: Storage
-    private var userRef: CollectionReference?
-    private var sleepDateRef: CollectionReference?
-    private var meditationRef: CollectionReference?
+//    private var userRef: CollectionReference?
+//    private var sleepDateRef: CollectionReference?
+//    private var meditationRef: CollectionReference?
     override init() {
         FirebaseApp.configure()
         authController = Auth.auth()
@@ -63,20 +65,39 @@ class FirebaseController: NSObject, DatabaseProtocol {
                 return
             }
             
-            // if sign up success
-            if let user = authResult?.user{
-                // store in UserDefaults
-                let defaults = UserDefaults.standard
-                defaults.set(true, forKey: "isLoggedIn")
-                defaults.set(email, forKey: "email")
-                defaults.set(password, forKey: "password")
-                
-                
+            // update login states
+            if let _ = authResult.user{
+                createUserProfile(email: email)
+                self?.loginStatePublisher.send(true)
             }
             
+        
             
         }
     }
+    
+    
+    /*
+     * USER PROFILE MANAGEMENT
+     */
+    var currentUserPublisher: CurrentValueSubject<User?, Never> = CurrentValueSubject<User?, Never>()
+    
+    // create user profile
+    func createUserProfile(email: String){
+        let data = ["email": email, "name": "Default Name", "user_cover": "gs://fit3162-insomnia-solutio-1a135.appspot.com/user_cover/Snipaste_2024-03-22_19-57-57.png"]
+        do{
+            let ref = try await database.collection("user").addDocument(data: data)
+            print("Document added with ID: \(ref.documentID)")
+        } catch{
+            print("Error adding document: \(error)")
+        }
+    }
+    
+//    // fetch user profile
+//    func fetchUserProfile(userID: String)
+//    
+//    // update user info
+//    func updateUserProfile(userID: String, email: String?, name: String?, userCover: String?)
     
     
 }

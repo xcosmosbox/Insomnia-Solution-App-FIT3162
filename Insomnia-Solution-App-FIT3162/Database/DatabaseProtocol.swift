@@ -23,6 +23,30 @@ protocol DatabaseProtocol{
     // login and signup functions
     func login(email: String, password: String)
     func signup(email: String, password: String)
+    
+    
+    /*
+     * USER PROFILE MANAGEMENT
+     */
+    var currentUserPublisher: CurrentValueSubject<User?, Never> { get }
+    
+    // create user profile
+    func createUserProfile(email: String)
+    
+    // fetch user profile
+    func fetchUserProfile(userID: String)
+    
+    // update user info
+    func updateUserProfile(userID: String, email: String?, name: String?, userCover: String?)
+    
+}
+
+extension DatabaseProtocol{
+    struct User {
+        var email: String
+        var name: String
+        var userCover: String
+    }
 }
 
 

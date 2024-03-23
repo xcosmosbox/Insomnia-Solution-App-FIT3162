@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beach</key>
+	<string>beach-umbrella</string>
+	<key>ocean_waves</key>
+	<string>wave</string>
+	<key>wind</key>
+	<string>wind</string>
+	<key>river</key>
+	<string>river</string>
+	<key>underwater</key>
+	<string>diving</string>
+	<key>water_dripping</key>
+	<string>drop</string>
+	<key>birds_nature</key>
+	<string>bird</string>
+	<key>fire</key>
+	<string>flame</string>
+	<key>tropical_jungle_bird</key>
+	<string>bird</string>
+	<key>rain</key>
+	<string>cloud.rain</string>
+	<key>tv_static</key>
+	<string>tv</string>
+	<key>campfire</key>
+	<string>campfire</string>
+	<key>storm</key>
+	<string>cloud.bolt.rain</string>
+	<key>bubble</key>
+	<string>bubbles</string>
+	<key>fan</key>
+	<string>fanblades</string>
+	<key>birds_river</key>
+	<string>bird</string>
+</dict>
+</plist>

@@ -90,6 +90,7 @@
 		27920D1E2BA004BE00357D31 /* Insomnia-Solution-App-FIT3162 */ = {
 			isa = PBXGroup;
 			children = (
+				CC8F59B12BADAEF6006D2C4A /* Login Page */,
 				CC8D37472BA7F7C300B7CF62 /* GoogleService-Info.plist */,
 				6A4C8B5D2BA5C8B900549481 /* Database */,
 				6A4C8B5A2BA5C80B00549481 /* Model */,

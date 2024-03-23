@@ -31,23 +31,16 @@ protocol DatabaseProtocol{
     var currentUserPublisher: CurrentValueSubject<User?, Never> { get }
     
     // create user profile
-    func createUserProfile(email: String)
+    func createUserProfile(email: String) async
     
     // fetch user profile
-    func fetchUserProfile(userID: String)
+    func fetchUserProfile(userID: String) async throws -> User
     
     // update user info
-    func updateUserProfile(userID: String, email: String?, name: String?, userCover: String?)
+    func updateUserProfile(userID: String, email: String?, name: String?, userCover: String?) async throws
     
 }
 
-extension DatabaseProtocol{
-    struct User {
-        var email: String
-        var name: String
-        var userCover: String
-    }
-}
 
 
 

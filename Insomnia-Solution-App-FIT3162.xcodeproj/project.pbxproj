@@ -13,12 +13,13 @@
 		27920D272BA004BE00357D31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27920D252BA004BE00357D31 /* Main.storyboard */; };
 		27920D292BA004BF00357D31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27920D282BA004BF00357D31 /* Assets.xcassets */; };
 		27920D2C2BA004BF00357D31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27920D2A2BA004BF00357D31 /* LaunchScreen.storyboard */; };
+		6A1F40AD2BAEB20100A793E1 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1F40AC2BAEB20100A793E1 /* HomePage.swift */; };
+		6A1F40AF2BAEB20500A793E1 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1F40AE2BAEB20500A793E1 /* SoundManager.swift */; };
 		6A4C8B5C2BA5C83B00549481 /* WhiteNoise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C8B5B2BA5C83B00549481 /* WhiteNoise.swift */; };
 		6A4C8B5F2BA5C8CB00549481 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C8B5E2BA5C8CB00549481 /* MulticastDelegate.swift */; };
 		6A4C8B632BA5CA8100549481 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A4C8B622BA5CA8100549481 /* GoogleService-Info.plist */; };
 		6A4C8B682BA5CF6000549481 /* river.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6A4C8B672BA5CF6000549481 /* river.mp3 */; };
 		6A7D43C92BAEA8870066AE1F /* WhiteNoiseProperty.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A7D43C82BAEA8870066AE1F /* WhiteNoiseProperty.plist */; };
-		6A7D43CB2BAEA8CD0066AE1F /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7D43CA2BAEA8CD0066AE1F /* HomePage.swift */; };
 		6A7D43DE2BAEA9180066AE1F /* bubble.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6A7D43CE2BAEA9150066AE1F /* bubble.mp3 */; };
 		6A7D43DF2BAEA9180066AE1F /* storm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6A7D43CF2BAEA9160066AE1F /* storm.mp3 */; };
 		6A7D43E02BAEA9180066AE1F /* water_dripping.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6A7D43D02BAEA9160066AE1F /* water_dripping.mp3 */; };
@@ -32,7 +33,6 @@
 		6A7D43EA2BAEA9180066AE1F /* campfire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6A7D43DA2BAEA9170066AE1F /* campfire.mp3 */; };
 		6A7D43EB2BAEA9180066AE1F /* birds_nature.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6A7D43DB2BAEA9170066AE1F /* birds_nature.mp3 */; };
 		6A7D43ED2BAEA9180066AE1F /* birds_river.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6A7D43DD2BAEA9180066AE1F /* birds_river.mp3 */; };
-		6A7D43EF2BAEAA3A0066AE1F /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7D43EE2BAEAA3A0066AE1F /* SoundManager.swift */; };
 		6AD727B42BA5DC0A007DA6B3 /* beach.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6AD727B32BA5DC0A007DA6B3 /* beach.mp3 */; };
 		6AFBF0BB2BA5EAAD00A1597B /* ocean_waves.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6AFBF0BA2BA5EAAD00A1597B /* ocean_waves.mp3 */; };
 /* End PBXBuildFile section */
@@ -46,12 +46,13 @@
 		27920D282BA004BF00357D31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27920D2B2BA004BF00357D31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27920D2D2BA004BF00357D31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A1F40AC2BAEB20100A793E1 /* HomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePage.swift; path = ../../../../../../../../Library/Containers/com.tencent.xinWeChat/Data/Library/Caches/com.tencent.xinWeChat/2.0b4.0.9/e887a596ff3da1b4d2380c3ca85f60fb/SaveTemp/9d85e57b497931bd9b44cd8fb35e0d6e/HomePage.swift; sourceTree = "<group>"; };
+		6A1F40AE2BAEB20500A793E1 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoundManager.swift; path = ../../../../../../../../Library/Containers/com.tencent.xinWeChat/Data/Library/Caches/com.tencent.xinWeChat/2.0b4.0.9/e887a596ff3da1b4d2380c3ca85f60fb/SaveTemp/697775e80a83336bd0e8ea5885b487a9/SoundManager.swift; sourceTree = "<group>"; };
 		6A4C8B5B2BA5C83B00549481 /* WhiteNoise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteNoise.swift; sourceTree = "<group>"; };
 		6A4C8B5E2BA5C8CB00549481 /* MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
 		6A4C8B622BA5CA8100549481 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6A4C8B672BA5CF6000549481 /* river.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = river.mp3; sourceTree = "<group>"; };
 		6A7D43C82BAEA8870066AE1F /* WhiteNoiseProperty.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WhiteNoiseProperty.plist; sourceTree = "<group>"; };
-		6A7D43CA2BAEA8CD0066AE1F /* HomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePage.swift; path = ../../../../../../../../Library/Containers/com.tencent.xinWeChat/Data/Library/Caches/com.tencent.xinWeChat/2.0b4.0.9/e887a596ff3da1b4d2380c3ca85f60fb/SaveTemp/9d85e57b497931bd9b44cd8fb35e0d6e/HomePage.swift; sourceTree = "<group>"; };
 		6A7D43CE2BAEA9150066AE1F /* bubble.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bubble.mp3; sourceTree = "<group>"; };
 		6A7D43CF2BAEA9160066AE1F /* storm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = storm.mp3; sourceTree = "<group>"; };
 		6A7D43D02BAEA9160066AE1F /* water_dripping.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = water_dripping.mp3; sourceTree = "<group>"; };
@@ -65,7 +66,6 @@
 		6A7D43DA2BAEA9170066AE1F /* campfire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = campfire.mp3; sourceTree = "<group>"; };
 		6A7D43DB2BAEA9170066AE1F /* birds_nature.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = birds_nature.mp3; sourceTree = "<group>"; };
 		6A7D43DD2BAEA9180066AE1F /* birds_river.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = birds_river.mp3; sourceTree = "<group>"; };
-		6A7D43EE2BAEAA3A0066AE1F /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoundManager.swift; path = ../../../../../../../../Library/Containers/com.tencent.xinWeChat/Data/Library/Caches/com.tencent.xinWeChat/2.0b4.0.9/e887a596ff3da1b4d2380c3ca85f60fb/SaveTemp/697775e80a83336bd0e8ea5885b487a9/SoundManager.swift; sourceTree = "<group>"; };
 		6AD727B32BA5DC0A007DA6B3 /* beach.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beach.mp3; sourceTree = "<group>"; };
 		6AFBF0BA2BA5EAAD00A1597B /* ocean_waves.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ocean_waves.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,13 +107,13 @@
 				6A4C8B5A2BA5C80B00549481 /* Model */,
 				27920D1F2BA004BE00357D31 /* AppDelegate.swift */,
 				27920D212BA004BE00357D31 /* SceneDelegate.swift */,
-				6A7D43CA2BAEA8CD0066AE1F /* HomePage.swift */,
+				6A1F40AC2BAEB20100A793E1 /* HomePage.swift */,
 				27920D232BA004BE00357D31 /* ViewController.swift */,
+				6A1F40AE2BAEB20500A793E1 /* SoundManager.swift */,
 				27920D2D2BA004BF00357D31 /* Info.plist */,
 				27920D252BA004BE00357D31 /* Main.storyboard */,
 				27920D282BA004BF00357D31 /* Assets.xcassets */,
 				27920D2A2BA004BF00357D31 /* LaunchScreen.storyboard */,
-				6A7D43EE2BAEAA3A0066AE1F /* SoundManager.swift */,
 			);
 			path = "Insomnia-Solution-App-FIT3162";
 			sourceTree = "<group>";
@@ -247,12 +247,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A4C8B5C2BA5C83B00549481 /* WhiteNoise.swift in Sources */,
-				6A7D43EF2BAEAA3A0066AE1F /* SoundManager.swift in Sources */,
+				6A1F40AD2BAEB20100A793E1 /* HomePage.swift in Sources */,
 				27920D242BA004BE00357D31 /* ViewController.swift in Sources */,
 				27920D202BA004BE00357D31 /* AppDelegate.swift in Sources */,
 				27920D222BA004BE00357D31 /* SceneDelegate.swift in Sources */,
+				6A1F40AF2BAEB20500A793E1 /* SoundManager.swift in Sources */,
 				6A4C8B5F2BA5C8CB00549481 /* MulticastDelegate.swift in Sources */,
-				6A7D43CB2BAEA8CD0066AE1F /* HomePage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,12 +399,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7CSJ759H94;
+				DEVELOPMENT_TEAM = 5LYSS5FAJ8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Insomnia-Solution-App-FIT3162/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -428,12 +427,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7CSJ759H94;
+				DEVELOPMENT_TEAM = 5LYSS5FAJ8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Insomnia-Solution-App-FIT3162/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

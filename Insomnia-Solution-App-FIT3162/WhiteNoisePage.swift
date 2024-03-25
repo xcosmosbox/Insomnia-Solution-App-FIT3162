@@ -14,7 +14,10 @@ struct IconLabelPair: Identifiable {
     var icon: String
 }
 
-struct HomePage: View {
+struct WhiteNoisePage: View {
+    // Use an optional UUID to track the selected item
+        @State private var selectedItem: UUID?
+    
     // Load the items from the plist
     let items: [IconLabelPair] = {
         var propertyListFormat =  PropertyListSerialization.PropertyListFormat.xml
@@ -38,52 +41,46 @@ struct HomePage: View {
     let gridLayout: [GridItem] = Array(repeating: .init(.flexible()), count: 3) // Adjust the count for the number of columns
     var body: some View {
         ScrollView {
-            // The title
             Text("White Noise")
                 .font(.title)
                 .bold()
                 .foregroundColor(.white)
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top) // Aligns text to the top
-                .padding(.top, 1) // Adds padding at the top to ensure it's below the Dynamic Island
-            Spacer(minLength: CGFloat(20))
+                .frame(maxWidth: .infinity, alignment: .top)
+                .padding(.top, 1)
             
-            // Buttons
+            Spacer(minLength: 20)
+            
             LazyVGrid(columns: gridLayout, alignment: .center, spacing: 30) {
                 ForEach(items) { item in
-                    VStack {
-                        // Attempt to create a UIImage to check if the image exists.
-                        Button(action: {
-                            // Handle the button tap
+                    Button(action: {
+                        if selectedItem == item.id {
+                            // If the selected item is clicked again, stop the music and clear the selection
+                            SoundManager.audioPlayer?.stop()
+                            selectedItem = nil
+                        } else {
+                            // Play the new sound and update the selected item
                             SoundManager.playSound(soundFileName: item.label)
-                        }) {
-                            // Provide the button's label view
-                            if UIImage(named: item.icon) != nil {
-                                ZStack {
-                                    Circle()
-                                        .fill(Color.gray)
-                                        .frame(width: 70, height: 70)
-                                    Image(item.icon) // Use the Image view initializer with the name of the image.
-                                        .resizable() // Make the image resizable.
-                                        .frame(width: 50, height: 50) // Set the frame as needed.
-                                }
-                            } else {
-                                Image(systemName: item.icon) // Use your own images if these are custom
-                                    .font(.largeTitle)
-                                    .foregroundColor(.white)
-                                    .frame(width: 70, height: 70) // Adjust size as needed
-                                    .background(Circle().fill(Color.gray))
-                            }
+                            selectedItem = item.id
                         }
-
-                        Text(item.label)
-                            .foregroundColor(.white)
-                            .font(.caption)
+                    }) {
+                        VStack {
+                            ImageOrIconView(item: item)
+                                .overlay(
+                                    Circle()
+                                        .stroke(selectedItem == item.id ? Color.blue : Color.clear, lineWidth: 3) // Blue border for the selected item
+                                )
+                                .clipShape(Circle()) // Ensure the overlay is clipped to a circular shape
+                                .buttonStyle(PlainButtonStyle()) // Use PlainButtonStyle to remove any default button styling provided by SwiftU
+                            Text(item.label)
+                                .foregroundColor(.white)
+                                .font(.caption)
+                        }
                     }
                 }
             }
             .padding()
         }
-        .background(Color.black) // Set the background color of your entire
+        .background(Color.black.edgesIgnoringSafeArea(.all))
     }
 }
 
@@ -92,9 +89,14 @@ struct ImageOrIconView: View {
 
     var body: some View {
         if let uiImage = UIImage(named: item.icon) {
-            Image(uiImage: uiImage)
-                .resizable() // Make the image resizable.
-                .frame(width: 70, height: 70) // Set the frame as needed.
+            ZStack {
+                Circle()
+                    .fill(Color.gray)
+                    .frame(width: 70, height: 70)
+                Image(item.icon) // Use the Image view initializer with the name of the image.
+                    .resizable() // Make the image resizable.
+                    .frame(width: 50, height: 50) // Set the frame as needed.
+            }
         } else {
             Image(systemName: item.icon)
                 .font(.largeTitle)
@@ -109,14 +111,14 @@ struct ImageOrIconView: View {
 struct YourAppName: App {
     var body: some Scene {
         WindowGroup {
-            HomePage() // Your root SwiftUI view
+            WhiteNoisePage() // Your root SwiftUI view
         }
     }
 }
 
 struct HomePage_Previews: PreviewProvider {
     static var previews: some View {
-        HomePage()
+        WhiteNoisePage()
     }
 }
 

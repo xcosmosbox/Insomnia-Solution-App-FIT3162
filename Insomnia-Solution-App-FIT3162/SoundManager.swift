@@ -15,7 +15,7 @@ class SoundManager {
     static func playSound(soundFileName: String) {
         // Set up the audio session
         do {
-            try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default)
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
         } catch {
             print(error.localizedDescription)

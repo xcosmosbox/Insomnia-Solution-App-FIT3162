@@ -88,7 +88,7 @@ struct ImageOrIconView: View {
     let item: IconLabelPair
 
     var body: some View {
-        if let uiImage = UIImage(named: item.icon) {
+        if let _ = UIImage(named: item.icon) {
             ZStack {
                 Circle()
                     .fill(Color.gray)
@@ -107,6 +107,8 @@ struct ImageOrIconView: View {
     }
 }
 
+// Just for developing test, will remove when integrating with other part, as white noise is not the home page
+// @main will make the page become the initial page when stating the app
 @main
 struct YourAppName: App {
     var body: some Scene {
@@ -116,6 +118,7 @@ struct YourAppName: App {
     }
 }
 
+// For preview on canvas
 struct HomePage_Previews: PreviewProvider {
     static var previews: some View {
         WhiteNoisePage()

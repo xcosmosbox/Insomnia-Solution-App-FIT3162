@@ -59,7 +59,7 @@ struct WhiteNoisePage: View {
                             selectedItem = nil
                         } else {
                             // Play the new sound and update the selected item
-                            SoundManager.playSound(soundFileName: item.label)
+//                            SoundManager.playSound(soundFileName: item.label)
                             selectedItem = item.id
                         }
                     }) {

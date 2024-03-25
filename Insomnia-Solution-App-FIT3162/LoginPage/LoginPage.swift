@@ -7,10 +7,10 @@
 
 
 import SwiftUI
+import Combine
 
 struct LoginPage: View {
-    @State private var email: String = ""
-    @State private var password: String = ""
+    @StateObject private var viewModel = LoginViewModel()
 
     var body: some View {
         NavigationView {
@@ -22,7 +22,7 @@ struct LoginPage: View {
                         .foregroundColor(.black)
                         .padding(.horizontal)
 
-                    TextField("Enter your email", text: $email)
+                    TextField("Enter your email", text: $viewModel.email)
                         .padding()
                         .background(Color(.secondarySystemBackground))
                         .cornerRadius(5.0)
@@ -36,7 +36,7 @@ struct LoginPage: View {
                         .foregroundColor(.black)
                         .padding(.horizontal)
 
-                    SecureField("Enter your password", text: $password)
+                    SecureField("Enter your password", text: $viewModel.password)
                         .padding()
                         .background(Color(.secondarySystemBackground))
                         .cornerRadius(5.0)
@@ -45,7 +45,7 @@ struct LoginPage: View {
                 .padding(.bottom, 20)
 
                 Button(action: {
-                    //login
+                    viewModel.login()
                 }) {
                     Text("Login")
                         .foregroundColor(.white)
@@ -57,7 +57,7 @@ struct LoginPage: View {
                 .padding(.horizontal)
 
                 Button(action: {
-                    // signup
+                    viewModel.signup()
                 }) {
                     Text("Signup")
                         .foregroundColor(.white)
@@ -70,8 +70,15 @@ struct LoginPage: View {
                 .padding(.horizontal)
 
                 Spacer()
+                
+                // TODO: when isLoggedIn is true then auto jump to next page
             }
             .padding()
+            .alert(item: $viewModel.errorMessage) { errorMessage in
+                // when we get error, then show this Alert
+                Alert(title: Text("Error"), message: Text(errorMessage.message), dismissButton: .default(Text("OK")))
+            }
+            
         }
     }
 }
@@ -80,13 +87,54 @@ struct LoginPage: View {
 struct insomniaSolutionAppFIT3162: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
+    // init FirebaseController obj
+    @StateObject var firebaseController = FirebaseController()
+    
     var body: some Scene {
         WindowGroup {
             LoginPage()
+                .environmentObject(firebaseController) // inject firebaseController to environment object
         }
     }
 }
 
-#Preview {
-    LoginPage()
+//#Preview {
+//    LoginPage()
+//}
+
+// Login page data model
+class LoginViewModel: ObservableObject {
+    // published datas
+    @Published var email: String = ""
+    @Published var password: String = ""
+    @Published var isLoggedIn: Bool = false
+    @Published var errorMessage: ErrorMessage? = nil
+    
+    // get firebaseController from EnvironmentObject
+    @EnvironmentObject var firebaseController: FirebaseController
+    
+    private var cancellables = Set<AnyCancellable>()
+
+    init() {
+        // & symbol to get reference 
+        // when updated data firebaseController will updated value of isLoggedIn
+        firebaseController.loginStatePublisher
+            .assign(to: &$isLoggedIn)
+        // using sink function to set itselft as receiver
+        firebaseController.errorPublisher
+            .sink { [weak self] error in
+                self?.errorMessage?.message = error
+            }
+            .store(in: &cancellables)
+    }
+    
+    // login function
+    func login() {
+        firebaseController.login(email: email, password: password)
+    }
+    
+    // sign up function
+    func signup() {
+        firebaseController.signup(email: email, password: password)
+    }
 }

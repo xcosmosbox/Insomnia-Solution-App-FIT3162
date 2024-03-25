@@ -8,10 +8,10 @@
 import Foundation
 
 struct Meditation: Identifiable {
-    let id: String // document id
-    let name: String
-    let description: String
-    let duration: String
-    let instructions: String
+    var id: String // document id
+    var name: String
+    var description: String
+    var duration: String
+    var instructions: String
 }
 

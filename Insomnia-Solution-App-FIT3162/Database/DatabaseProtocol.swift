@@ -39,6 +39,19 @@ protocol DatabaseProtocol{
     // update user info
     func updateUserProfile(userID: String, email: String?, name: String?, userCover: String?) async throws
     
+    
+    /*
+     * SLEEP DATA MANAGEMENT
+     */
+    // add user sleep data
+    func addSleepData(forUserID userID: String, sleepData: SleepData) async throws
+
+    // fetch user sleep data
+    func fetchSleepData(forUserID userID: String, from startDate: Date, to endDate: Date) async throws -> [SleepData]
+
+    // update user sleep data
+    func updateSleepData(forUserID userID: String, sleepDataID: String, newSleepData: SleepData) async throws
+    
 }
 
 

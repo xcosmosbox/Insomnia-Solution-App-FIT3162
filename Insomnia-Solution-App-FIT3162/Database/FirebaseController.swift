@@ -177,8 +177,6 @@ class FirebaseController: NSObject, DatabaseProtocol {
     }
     func fetchSleepData(forUserID userID: String, from startDate: Date, to endDate: Date) async throws -> [SleepData] {
         // convert start date and end date
-        let startString = startDate.sleepDataDateString()
-        let endString = endDate.sleepDataDateString()
         let documentSnapshot = try await database.collection("sleep_data").document(userID).getDocument()
         
         // check data valid

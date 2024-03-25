@@ -17,12 +17,9 @@ import FirebaseStorage
 
 
 class FirebaseController: NSObject, DatabaseProtocol {
+    
+    
 
-    
-    
-    
-    
-    
     
     /*
      * ###############################
@@ -231,6 +228,37 @@ class FirebaseController: NSObject, DatabaseProtocol {
             throw error
         }
     }
+    
+    
+    /*
+     * ########################
+     * MEDITATION MANAGEMENT
+     * ########################
+     */
+    func fetchAllMeditations() async throws -> [Meditation] {
+        // fetch meditation document reference
+        let querySnapshot = try await database.collection("meditation").getDocuments()
+        
+        // init meditation array
+        var meditations: [Meditation] = []
+        // guard each document and new Meditataion obj to store in array
+        for document in querySnapshot.documents {
+            let data = document.data()
+            guard let name = data["Name"] as? String,
+                  let description = data["Description"] as? String,
+                  let duration = data["Duration"] as? String,
+                  let instructions = data["Instructions"] as? String else {
+                continue
+            }
+            let meditation = Meditation(id: document.documentID, name: name, description: description, duration: duration, instructions: instructions)
+            meditations.append(meditation)
+        }
+        
+        // return meditations array
+        return meditations
+    }
+    
+    
     
     
     

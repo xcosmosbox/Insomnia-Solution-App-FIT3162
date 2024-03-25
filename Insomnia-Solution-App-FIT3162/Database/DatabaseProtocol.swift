@@ -53,6 +53,13 @@ protocol DatabaseProtocol{
     // update user sleep data
     func updateSleepData(forUserID userID: String, sleepDataID: String, newSleepData: SleepData) async throws
     
+    
+    
+    /*
+     * MEDITATION MANAGEMENT
+     */
+    func fetchAllMeditations() async throws -> [Meditation]
+    
 }
 
 

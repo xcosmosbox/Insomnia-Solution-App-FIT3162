@@ -27,6 +27,7 @@
 		CC8D37512BA7FB4F00B7CF62 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = CC8D37502BA7FB4F00B7CF62 /* FirebaseStorage */; };
 		CC9D32A42BB18F1B009E51C9 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9D32A32BB18F1A009E51C9 /* LoginPage.swift */; };
 		CC9D32A62BB194DF009E51C9 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9D32A52BB194DF009E51C9 /* ErrorMessage.swift */; };
+		CC9D32A82BB19A0D009E51C9 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9D32A72BB19A0D009E51C9 /* TestView.swift */; };
 		CCE5896A2BAEF6690061D968 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = CCE589692BAEF6690061D968 /* FirebaseAuthCombine-Community */; };
 		CCE5896C2BAEF6690061D968 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = CCE5896B2BAEF6690061D968 /* FirebaseFirestoreCombine-Community */; };
 		CCE5896E2BAEF6690061D968 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = CCE5896D2BAEF6690061D968 /* FirebaseStorageCombine-Community */; };
@@ -52,6 +53,7 @@
 		CC8D37472BA7F7C300B7CF62 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CC9D32A32BB18F1A009E51C9 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 		CC9D32A52BB194DF009E51C9 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		CC9D32A72BB19A0D009E51C9 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		CCE589702BAEF7B10061D968 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				CC9D32A32BB18F1A009E51C9 /* LoginPage.swift */,
+				CC9D32A72BB19A0D009E51C9 /* TestView.swift */,
 			);
 			path = LoginPage;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC9D32A82BB19A0D009E51C9 /* TestView.swift in Sources */,
 				CC1A684C2BAE91770018D7BC /* FirebaseController.swift in Sources */,
 				CC4921F12BB15B1700ACB108 /* Meditation.swift in Sources */,
 				CC4921EF2BB13FA700ACB108 /* SleepData.swift in Sources */,
@@ -394,7 +398,6 @@
 				INFOPLIST_FILE = "Insomnia-Solution-App-FIT3162/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -423,7 +426,6 @@
 				INFOPLIST_FILE = "Insomnia-Solution-App-FIT3162/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;

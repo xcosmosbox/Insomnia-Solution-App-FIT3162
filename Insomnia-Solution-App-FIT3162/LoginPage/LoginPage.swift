@@ -10,10 +10,11 @@ import SwiftUI
 import Combine
 
 struct LoginPage: View {
-    @StateObject private var viewModel = LoginViewModel()
+//    @EnvironmentObject var firebaseController: FirebaseController
+    @StateObject var viewModel: LoginViewModel
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 
                 VStack(alignment: .leading) {
@@ -72,14 +73,19 @@ struct LoginPage: View {
                 Spacer()
                 
                 // TODO: when isLoggedIn is true then auto jump to next page
+
             }
             .padding()
+            .navigationDestination(isPresented: $viewModel.isLoggedIn){
+                TestView()
+            }
             .alert(item: $viewModel.errorMessage) { errorMessage in
                 // when we get error, then show this Alert
                 Alert(title: Text("Error"), message: Text(errorMessage.message), dismissButton: .default(Text("OK")))
             }
             
         }
+
     }
 }
 
@@ -88,12 +94,14 @@ struct insomniaSolutionAppFIT3162: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     // init FirebaseController obj
-    @StateObject var firebaseController = FirebaseController()
+//    @StateObject var firebaseController = FirebaseController()
+    
     
     var body: some Scene {
         WindowGroup {
-            LoginPage()
-                .environmentObject(firebaseController) // inject firebaseController to environment object
+            
+//            LoginPage()
+//                .environmentObject(firebaseController) // inject firebaseController to environment object
         }
     }
 }
@@ -111,13 +119,15 @@ class LoginViewModel: ObservableObject {
     @Published var errorMessage: ErrorMessage? = nil
     
     // get firebaseController from EnvironmentObject
-    @EnvironmentObject var firebaseController: FirebaseController
+    @Published var firebaseController: FirebaseController
     
     private var cancellables = Set<AnyCancellable>()
 
-    init() {
-        // & symbol to get reference 
+    init(database: FirebaseController) {
+        firebaseController = database
+        // & symbol to get reference
         // when updated data firebaseController will updated value of isLoggedIn
+        print("33333")
         firebaseController.loginStatePublisher
             .assign(to: &$isLoggedIn)
         // using sink function to set itselft as receiver
@@ -128,13 +138,17 @@ class LoginViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
+    
+    
     // login function
     func login() {
         firebaseController.login(email: email, password: password)
+        print("hahah 1111 ")
     }
     
     // sign up function
     func signup() {
         firebaseController.signup(email: email, password: password)
+        print("hahah 2222 ")
     }
 }

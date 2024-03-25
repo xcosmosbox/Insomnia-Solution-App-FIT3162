@@ -22,7 +22,7 @@ class SoundManager {
         }
         
         // Set up the audio player
-        if let soundFilePath = Bundle.main.path(forResource: soundFileName, ofType: "mp3") {
+        if let soundFilePath = Bundle.main.path(forResource: "", ofType: "mp3") {
             let soundFileURL = URL(fileURLWithPath: soundFilePath)
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: soundFileURL)

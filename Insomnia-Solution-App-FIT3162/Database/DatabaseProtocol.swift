@@ -43,6 +43,7 @@ protocol DatabaseProtocol{
     /*
      * SLEEP DATA MANAGEMENT
      */
+    var sleepDataPublisher: CurrentValueSubject<[SleepData], Never> { get }
     // add user sleep data
     func addSleepData(forUserID userID: String, sleepData: SleepData) async throws
 

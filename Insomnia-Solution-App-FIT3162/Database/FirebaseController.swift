@@ -17,6 +17,7 @@ import FirebaseStorage
 
 
 class FirebaseController: NSObject, DatabaseProtocol {
+
     
     
     
@@ -141,8 +142,137 @@ class FirebaseController: NSObject, DatabaseProtocol {
     }
     
     
+    /*
+     * ########################
+     * SLEEP DATA MANAGEMENT
+     * ########################
+     */
+    var sleepDataPublisher: CurrentValueSubject<[SleepData], Never> = CurrentValueSubject<[SleepData], Never>([])
+    
+    func addSleepData(forUserID userID: String, sleepData: SleepData) async throws {
+        // build one date map to add into the firebase
+        let data: [String: Any] = [
+            "date": sleepData.date.sleepDataDateString(),
+            "start_time": sleepData.startTime.sleepDataTimeString(),
+            "end_time": sleepData.endTime.sleepDataTimeString()
+        ]
+        
+        // try get the sleep_date collection and adding data
+        do {
+            _ = try await database.collection("sleep_data").document(userID).setData(data, merge: true)
+            
+            // fetch all latest data and publish to all listener
+            let updatedSleepData = try await fetchAllSleepData(forUserID: userID)
+            sleepDataPublisher.send(updatedSleepData)
+        } catch {
+            // if error then throw error
+            throw error
+        }
+    }
+    private func fetchAllSleepData (forUserID userID: String) async throws -> [SleepData]{
+        // start date -> one month ago
+        let startDate = Calendar.current.date(byAdding: .month, value: -1, to: Date())!
+        // end date -> now
+        let endDate = Date()
+        // call fetchSleepData to get data
+        let allSleepData = try await fetchSleepData(forUserID: userID, from: startDate, to: endDate)
+        return allSleepData
+    }
+    func fetchSleepData(forUserID userID: String, from startDate: Date, to endDate: Date) async throws -> [SleepData] {
+        // convert start date and end date
+        let startString = startDate.sleepDataDateString()
+        let endString = endDate.sleepDataDateString()
+        let documentSnapshot = try await database.collection("sleep_data").document(userID).getDocument()
+        
+        // check data valid
+        guard let documentData = documentSnapshot.data(), documentSnapshot.exists else {
+            throw NSError(domain: "FirestoreError", code: 404, userInfo: [NSLocalizedDescriptionKey: "Document for user ID \(userID) not found."])
+        }
+        guard let sleepDataArray = documentData["sleep_array"] as? [[String: String]] else {
+            throw NSError(domain: "FirestoreError", code: 422, userInfo: [NSLocalizedDescriptionKey: "Invalid sleep data structure for user ID \(userID)."])
+        }
+        
+        // set date formatter
+        let dateFormatter = DateFormatter.sleepDataDateFormatter
+        
+        // using compactMap to fillter all data
+        let sleepData = sleepDataArray.compactMap { dataDict -> SleepData? in
+            guard let dateString = dataDict["date"],
+                  let date = dateFormatter.date(from: dateString),
+                  startDate...endDate ~= date, // check date is betweent in startDate and endDate
+                  let startTimeString = dataDict["start_time"],
+                  let startTime = dateFormatter.date(from: startTimeString),
+                  let endTimeString = dataDict["end_time"],
+                  let endTime = dateFormatter.date(from: endTimeString) else {
+                return nil
+            }
+            return SleepData(date: date, startTime: startTime, endTime: endTime)
+        }
+        
+        // publish to listener
+        sleepDataPublisher.send(sleepData)
+        return sleepData
+    }
+    
+    func updateSleepData(forUserID userID: String, sleepDataID: String, newSleepData: SleepData) async throws {
+        // inti data
+        let data: [String: Any] = [
+            "date": newSleepData.date.sleepDataDateString(),
+            "start_time": newSleepData.startTime.sleepDataTimeString(),
+            "end_time": newSleepData.endTime.sleepDataTimeString()
+        ]
+        do {
+            // try update data
+            try await database.collection("sleep_data").document(sleepDataID).updateData(data)
+            let updatedSleepData = try await fetchAllSleepData(forUserID: userID)
+            sleepDataPublisher.send(updatedSleepData)
+        } catch {
+            // if error then throw error
+            throw error
+        }
+    }
+    
+    
+    
     
 }
+
+
+/*
+ * ########################################################################
+ * extension DateFormatter, Date and String to convert String and Date
+ * ########################################################################
+ */
+extension DateFormatter {
+    static let sleepDataDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.timeZone = TimeZone.current
+        return formatter
+    }()
+    
+    static let sleepDataTimeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mmZZZZZ"
+        formatter.timeZone = TimeZone.current
+        return formatter
+    }()
+}
+extension Date {
+    func sleepDataDateString() -> String {
+        DateFormatter.sleepDataDateFormatter.string(from: self)
+    }
+    
+    func sleepDataTimeString() -> String {
+        DateFormatter.sleepDataTimeFormatter.string(from: self)
+    }
+}
+extension String {
+    func sleepDataDate() -> Date? {
+        DateFormatter.sleepDataTimeFormatter.date(from: self)
+    }
+}
+
 
 
 

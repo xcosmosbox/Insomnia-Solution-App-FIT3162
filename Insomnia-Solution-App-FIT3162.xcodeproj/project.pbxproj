@@ -29,6 +29,7 @@
 		CCE5896C2BAEF6690061D968 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = CCE5896B2BAEF6690061D968 /* FirebaseFirestoreCombine-Community */; };
 		CCE5896E2BAEF6690061D968 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = CCE5896D2BAEF6690061D968 /* FirebaseStorageCombine-Community */; };
 		CCE589712BAEF7B10061D968 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE589702BAEF7B10061D968 /* User.swift */; };
+		E07A3DEA2BB2300400EF5E62 /* PhysicalVisualisation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07A3DE92BB2300400EF5E62 /* PhysicalVisualisation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		CC4921F02BB15B1700ACB108 /* Meditation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meditation.swift; sourceTree = "<group>"; };
 		CC8D37472BA7F7C300B7CF62 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CCE589702BAEF7B10061D968 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E07A3DE92BB2300400EF5E62 /* PhysicalVisualisation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicalVisualisation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				27920D212BA004BE00357D31 /* SceneDelegate.swift */,
 				27920D232BA004BE00357D31 /* ViewController.swift */,
 				6A4C8B582BA5C5B200549481 /* HomePage.swift */,
+				E07A3DE92BB2300400EF5E62 /* PhysicalVisualisation.swift */,
 				27920D252BA004BE00357D31 /* Main.storyboard */,
 				27920D282BA004BF00357D31 /* Assets.xcassets */,
 				27920D2A2BA004BF00357D31 /* LaunchScreen.storyboard */,
@@ -226,6 +229,7 @@
 				CCE589712BAEF7B10061D968 /* User.swift in Sources */,
 				6A4C8B592BA5C5B200549481 /* HomePage.swift in Sources */,
 				6A4C8B5F2BA5C8CB00549481 /* MulticastDelegate.swift in Sources */,
+				E07A3DEA2BB2300400EF5E62 /* PhysicalVisualisation.swift in Sources */,
 				CC1A684A2BAE86690018D7BC /* DatabaseProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

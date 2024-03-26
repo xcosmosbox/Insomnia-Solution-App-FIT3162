@@ -2,44 +2,36 @@
 //  SleepImprovementSuggestion.swift
 //  Insomnia-Solution-App-FIT3162
 //
-//  Created by Jianhua Liu on 2024/3/25.
+//  Created by Jianhua Liu on 2024/3/23.
 //
 
 import SwiftUI
 
-struct SleepTrackerView: View {
+struct SleepSuggestionView: View {
     var body: some View {
-        VStack {
-            Button(action: {
-                // Start sleep action
-            }) {
-                Text("Start Sleep")
-                    .foregroundColor(.white)
-                    .frame(width: 200, height: 50)
-                    .background(Color.blue)
-                    .cornerRadius(25)
+        NavigationView {
+            VStack(alignment: .leading, spacing: 20) {
+                Text("Meditation Techniques")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+
+                Text("Suggestion 1")
+                    .font(.title)
+                    .foregroundColor(.secondary)
+
+                Text("Remove electronic devices, such as TVs, computers, and smart phones, from the bedroom.")
+                    .font(.body)
+                
+                Spacer()
             }
             .padding()
-
-            ZStack {
-                Circle()
-                    .stroke(lineWidth: 10)
-                    .opacity(0.3)
-                    .foregroundColor(Color.yellow)
-
-                Circle()
-                    .trim(from: 0.0, to: 0.67)
-                    .stroke(style: StrokeStyle(lineWidth: 10, lineCap: .round))
-                    .foregroundColor(Color.yellow)
-                    .rotationEffect(Angle(degrees: 270))
-            }
-            .frame(width: 150, height: 150)
-            .padding()
-            
-            // Add more components as needed
-            
-            Spacer()
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .navigationTitle("Weekly Overview")
+    }
+}
+
+struct SleepSuggestionView_Previews: PreviewProvider {
+    static var previews: some View {
+        SleepSuggestionView()
     }
 }

@@ -16,7 +16,7 @@ struct PhysicalVisualisation: View {
         GeometryReader { geometry in
             VStack(spacing: 0) {
                 RingsChart()
-                        .data([(8000/10000)*100,(3/8)*100]) // steps out of 10000 and hours out of 8
+                        .data([80,43]) // steps out of 10000 and hours out of 8
                         .chartStyle(ChartStyle(backgroundColor: .white,
                                                foregroundColor: ColorGradient(.purple, .blue)))
 

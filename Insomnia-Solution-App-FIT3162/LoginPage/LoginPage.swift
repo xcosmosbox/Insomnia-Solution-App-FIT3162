@@ -10,7 +10,7 @@ import SwiftUI
 import Combine
 
 struct LoginPage: View {
-//    @EnvironmentObject var firebaseController: FirebaseController
+    @EnvironmentObject var firebaseController: FirebaseController
     @StateObject var viewModel: LoginViewModel
 
     var body: some View {
@@ -93,15 +93,15 @@ struct LoginPage: View {
 struct insomniaSolutionAppFIT3162: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
-    // init FirebaseController obj
-//    @StateObject var firebaseController = FirebaseController()
     
+    // init FirebaseController obj
+    var firebaseController = FirebaseController()
     
     var body: some Scene {
         WindowGroup {
             
-//            LoginPage()
-//                .environmentObject(firebaseController) // inject firebaseController to environment object
+            LoginPage(viewModel: LoginViewModel(database: firebaseController))
+                .environmentObject(firebaseController) // inject firebaseController to environment object
         }
     }
 }

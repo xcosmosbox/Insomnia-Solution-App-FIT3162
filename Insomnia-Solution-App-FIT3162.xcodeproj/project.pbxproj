@@ -30,6 +30,7 @@
 		CCE5896E2BAEF6690061D968 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = CCE5896D2BAEF6690061D968 /* FirebaseStorageCombine-Community */; };
 		CCE589712BAEF7B10061D968 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE589702BAEF7B10061D968 /* User.swift */; };
 		E07A3DEA2BB2300400EF5E62 /* PhysicalVisualisation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07A3DE92BB2300400EF5E62 /* PhysicalVisualisation.swift */; };
+		E0A2110E2BB2754000EDB1AA /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = E0A2110D2BB2754000EDB1AA /* SwiftUICharts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 				CC8D37512BA7FB4F00B7CF62 /* FirebaseStorage in Frameworks */,
 				CC8D374D2BA7FB4F00B7CF62 /* FirebaseFirestore in Frameworks */,
 				CCE5896C2BAEF6690061D968 /* FirebaseFirestoreCombine-Community in Frameworks */,
+				E0A2110E2BB2754000EDB1AA /* SwiftUICharts in Frameworks */,
 				CC8D374F2BA7FB4F00B7CF62 /* FirebaseFirestoreSwift in Frameworks */,
 				CCE5896A2BAEF6690061D968 /* FirebaseAuthCombine-Community in Frameworks */,
 			);
@@ -159,6 +161,7 @@
 				CCE589692BAEF6690061D968 /* FirebaseAuthCombine-Community */,
 				CCE5896B2BAEF6690061D968 /* FirebaseFirestoreCombine-Community */,
 				CCE5896D2BAEF6690061D968 /* FirebaseStorageCombine-Community */,
+				E0A2110D2BB2754000EDB1AA /* SwiftUICharts */,
 			);
 			productName = "Insomnia-Solution-App-FIT3162";
 			productReference = 27920D1C2BA004BE00357D31 /* Insomnia-Solution-App-FIT3162.app */;
@@ -190,6 +193,7 @@
 			mainGroup = 27920D132BA004BE00357D31;
 			packageReferences = (
 				CC8D37492BA7FB4F00B7CF62 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				E0A2110C2BB2754000EDB1AA /* XCRemoteSwiftPackageReference "chartview" */,
 			);
 			productRefGroup = 27920D1D2BA004BE00357D31 /* Products */;
 			projectDirPath = "";
@@ -460,6 +464,14 @@
 				minimumVersion = 10.22.1;
 			};
 		};
+		E0A2110C2BB2754000EDB1AA /* XCRemoteSwiftPackageReference "chartview" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apppear/chartview.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = "2.0.0-beta.8";
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -497,6 +509,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CC8D37492BA7FB4F00B7CF62 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		E0A2110D2BB2754000EDB1AA /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0A2110C2BB2754000EDB1AA /* XCRemoteSwiftPackageReference "chartview" */;
+			productName = SwiftUICharts;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

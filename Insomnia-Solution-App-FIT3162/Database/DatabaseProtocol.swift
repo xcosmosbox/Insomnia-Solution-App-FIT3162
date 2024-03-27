@@ -31,7 +31,7 @@ protocol DatabaseProtocol{
     var currentUserPublisher: CurrentValueSubject<User?, Never> { get }
     
     // create user profile
-    func createUserProfile(email: String) async
+//    func createUserProfile(email: String) async  
     
     // fetch user profile
     func fetchUserProfile(userID: String) async throws -> User

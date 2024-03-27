@@ -16,7 +16,7 @@ import FirebaseStorage
 
 
 
-class FirebaseController: NSObject, DatabaseProtocol {
+class FirebaseController: NSObject, DatabaseProtocol, ObservableObject {
     
     
 
@@ -70,11 +70,11 @@ class FirebaseController: NSObject, DatabaseProtocol {
             }
             
             // update login states
-            if let _ = authResult?.user{
+            if let user = authResult?.user{
                 // using guard to explicit unpacking
                 guard let strongSelf = self else { return }
                 Task{
-                    await strongSelf.createUserProfile(email: email)
+                    await strongSelf.createUserProfile(email: email, uid: user.uid)
                 }
                 // send
                 self?.loginStatePublisher.send(true)
@@ -92,11 +92,11 @@ class FirebaseController: NSObject, DatabaseProtocol {
     var currentUserPublisher: CurrentValueSubject<User?, Never> = CurrentValueSubject<User?, Never>(nil)
     
     // create user profile
-    func createUserProfile(email: String) async {
+    private func createUserProfile(email: String, uid: String) async {
         let data = ["email": email, "name": "Default Name", "user_cover": "gs://fit3162-insomnia-solutio-1a135.appspot.com/user_cover/Snipaste_2024-03-22_19-57-57.png"]
         do{
-            let ref = try await database.collection("user").addDocument(data: data)
-            print("Document added with ID: \(ref.documentID)")
+            try await database.collection("user").document(uid).setData(data)
+            print("Document added with ID: \(uid)")
         } catch{
             print("Error adding document: \(error)")
         }
@@ -177,8 +177,6 @@ class FirebaseController: NSObject, DatabaseProtocol {
     }
     func fetchSleepData(forUserID userID: String, from startDate: Date, to endDate: Date) async throws -> [SleepData] {
         // convert start date and end date
-        let startString = startDate.sleepDataDateString()
-        let endString = endDate.sleepDataDateString()
         let documentSnapshot = try await database.collection("sleep_data").document(userID).getDocument()
         
         // check data valid

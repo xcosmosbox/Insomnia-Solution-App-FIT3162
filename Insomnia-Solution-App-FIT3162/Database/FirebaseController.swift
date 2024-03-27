@@ -16,7 +16,7 @@ import FirebaseStorage
 
 
 
-class FirebaseController: NSObject, DatabaseProtocol {
+class FirebaseController: NSObject, DatabaseProtocol, ObservableObject {
     
     
 

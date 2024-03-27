@@ -25,6 +25,7 @@
 		CC8D374D2BA7FB4F00B7CF62 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CC8D374C2BA7FB4F00B7CF62 /* FirebaseFirestore */; };
 		CC8D374F2BA7FB4F00B7CF62 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CC8D374E2BA7FB4F00B7CF62 /* FirebaseFirestoreSwift */; };
 		CC8D37512BA7FB4F00B7CF62 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = CC8D37502BA7FB4F00B7CF62 /* FirebaseStorage */; };
+		CCABB1052BB3ECC0000323DB /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCABB1042BB3ECC0000323DB /* ErrorMessage.swift */; };
 		CCE5896A2BAEF6690061D968 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = CCE589692BAEF6690061D968 /* FirebaseAuthCombine-Community */; };
 		CCE5896C2BAEF6690061D968 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = CCE5896B2BAEF6690061D968 /* FirebaseFirestoreCombine-Community */; };
 		CCE5896E2BAEF6690061D968 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = CCE5896D2BAEF6690061D968 /* FirebaseStorageCombine-Community */; };
@@ -48,6 +49,7 @@
 		CC4921EE2BB13FA700ACB108 /* SleepData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepData.swift; sourceTree = "<group>"; };
 		CC4921F02BB15B1700ACB108 /* Meditation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meditation.swift; sourceTree = "<group>"; };
 		CC8D37472BA7F7C300B7CF62 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CCABB1042BB3ECC0000323DB /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		CCE589702BAEF7B10061D968 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +130,7 @@
 				CCE589702BAEF7B10061D968 /* User.swift */,
 				CC4921EE2BB13FA700ACB108 /* SleepData.swift */,
 				CC4921F02BB15B1700ACB108 /* Meditation.swift */,
+				CCABB1042BB3ECC0000323DB /* ErrorMessage.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				CC4921F12BB15B1700ACB108 /* Meditation.swift in Sources */,
 				CC4921EF2BB13FA700ACB108 /* SleepData.swift in Sources */,
 				6A4C8B5C2BA5C83B00549481 /* WhiteNoise.swift in Sources */,
+				CCABB1052BB3ECC0000323DB /* ErrorMessage.swift in Sources */,
 				27920D242BA004BE00357D31 /* ViewController.swift in Sources */,
 				27920D202BA004BE00357D31 /* AppDelegate.swift in Sources */,
 				27920D222BA004BE00357D31 /* SceneDelegate.swift in Sources */,
